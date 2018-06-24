@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ProjetoDagger</string>
+    <string name="tx_brasil">dagger brasil</string>
+    <string name="tx_espanha">dagger espanha</string>
+</resources>
