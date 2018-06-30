@@ -37,21 +37,27 @@ class ContentFragment: Fragment(), ContentMVP.View {
     }
 
     private fun initInjector() {
+        var contentComponent = DaggerMyComponent_ContentComponent.builder()
+                .contentModule(ContentModule(this))
+                .appModule(AppModule(activity.application))
+                .build()
+        contentComponent.inject(this)
         //init
     }
 
 
-    override fun onAttach(context: Context?) {
+    /*override fun onAttach(context: Context?) {
         super.onAttach(context)
         var contentComponent = DaggerMyComponent_ContentComponent.builder()
                 .contentModule(ContentModule(this))
                 .appModule(AppModule(activity.application))
                 .build()
         contentComponent.inject(this)
-    }
+    }*/
     @RequiresApi(Build.VERSION_CODES.M)
     private fun initPresenter() {
-        presenter.teste(context)
+        //presenter.teste(context)
+        showHome()
     }
 
     override fun showHome() {
